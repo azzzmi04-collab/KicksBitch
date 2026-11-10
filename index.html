@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KicksVault - Authentic Branded Sneakers & Footwear Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F17',
+                            card: '#151C28',
+                            accent: '#38BDF8', // Cyan/Sky
+                            neon: '#10B981',   // Emerald Green
+                            gold: '#F59E0B',
+                            hover: '#0284C7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38BDF8;
+        }
+    </style>
+</head>
+<body class="bg-[#0B0F17] text-gray-100 font-sans antialiased min-h-screen selection:bg-brand-accent selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-cyan-600 via-emerald-600 to-indigo-600 text-white text-xs py-2 text-center font-medium tracking-wide">
+        <i class="fa-solid fa-certificate mr-1">
+        100% Guaranteed Authentic & Brand New In Box (BNIB) | Cicilan E-Wallet & Bank 0% s/d 12 Bulan!
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-[#0B0F17]/90 backdrop-blur-md border-b border-gray-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-cyan-500/20">
+                        KV
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-white uppercase italic">Kicks<span class="text-brand-accent">Vault</span></span>
+                        <span class="block text-[10px] text-gray-400 -mt-1 tracking-widest font-semibold uppercase">Authentic Sneakers</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#home" class="text-brand-accent hover:text-cyan-300 transition-colors">Beranda</a>
+                    <a href="#catalog" class="text-gray-300 hover:text-brand-accent transition-colors">Katalog & Stok</a>
+                    <a href="#spec-table" class="text-gray-300 hover:text-brand-accent transition-colors">Tabel Spesifikasi</a>
+                    <a href="#calculator" class="text-gray-300 hover:text-brand-accent transition-colors">Kalkulator Angsuran</a>
+                    <a href="#payment-methods" class="text-gray-300 hover:text-brand-accent transition-colors">Pembayaran</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/6281234567890?text=Halo%20KicksVault,%20saya%20ingin%20tanya%20stok%20sepatu." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold text-xs px-4 py-2.5 rounded-full transition-all shadow-lg shadow-emerald-500/20 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>CS WhatsApp</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#151C28] border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block text-brand-accent font-medium py-2">Beranda</a>
+            <a href="#catalog" class="block text-gray-300 font-medium py-2">Katalog & Stok</a>
+            <a href="#spec-table" class="block text-gray-300 font-medium py-2">Tabel Spesifikasi</a>
+            <a href="#calculator" class="block text-gray-300 font-medium py-2">Kalkulator Angsuran</a>
+            <a href="#payment-methods" class="block text-gray-300 font-medium py-2">Pembayaran</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-500 text-black font-bold py-2.5 rounded-xl w-full">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Order Via WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-[#0B0F17] via-[#111827] to-[#0B0F17]">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        Koleksi Terlengkap Season 2026
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Temukan Sepatu <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Branded Original</span> Impianmu.
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Jaminan 100% Baru & BNIB (Brand New In Box). Tersedia pembelian <strong class="text-white">Cash / Tunai</strong> dan opsi <strong class="text-white">Cicilan Mudah via E-Wallet & Bank Transfer</strong>.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-black font-extrabold rounded-2xl shadow-xl shadow-cyan-500/20 text-center transition-all transform hover:-translate-y-1">
+                            Jelajahi Katalog <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#spec-table" class="w-full sm:w-auto px-8 py-4 bg-gray-800/80 hover:bg-gray-700 text-white font-bold rounded-2xl border border-gray-700 text-center transition-all">
+                            Lihat Stok & Harga
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-black text-white">100%</div>
+                            <div class="text-xs text-gray-400">Original & BNIB</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white">0%</div>
+                            <div class="text-xs text-gray-400">Bunga Angsuran</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-emerald-400">Fast</div>
+                            <div class="text-xs text-gray-400">Respon Order WA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Highlight -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+                    <div class="relative rounded-3xl bg-[#151C28] p-4 border border-gray-800 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80" alt="Nike Air Jordan 1 Retro High" class="w-full h-80 sm:h-96 object-cover rounded-2xl">
+                        <div class="mt-4 flex justify-between items-center px-2">
+                            <div>
+                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Featured Release</span>
+                                <h3 class="text-lg font-bold text-white">Air Jordan 1 High OG "Chicago"</h3>
+                            </div>
+                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-extrabold text-sm rounded-lg border border-emerald-500/30">
+                                Ready Stock
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Filter & Catalog Section -->
+    <section id="catalog" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <h2 class="text-3xl font-black text-white tracking-tight">Katalog Sepatu Branded</h2>
+                <p class="text-gray-400 text-sm mt-1">Pilih sepatu favoritmu dan lakukan pemesanan secara instan via WA.</p>
+            </div>
+            <!-- Search Input -->
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-500"></i>
+                <input type="text" id="searchInput" placeholder="Cari nama sepatu / brand..." class="w-full bg-[#151C28] border border-gray-700 text-white rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 transition-all">
+            </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="bg-[#151C28] p-4 rounded-2xl border border-gray-800 mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Brand Filter -->
+            <div>
+                <label class="block text-xs font-semibold text-gray-400 mb-1">Filter Brand</label>
+                <select id="brandFilter" class="w-full bg-[#0B0F17] border border-gray-700 text-white rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400">
+                    <option value="all">Semua Brand</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="New Balance">New Balance</option>
+                    <option value="Puma">Puma</option>
+                    <option value="Vans">Vans</option>
+                </select>
+            </div>
+
+            <!-- Size Filter -->
+            <div>
+                <label class="block text-xs font-semibold text-gray-400 mb-1">Filter Ukuran (EU)</label>
+                <select id="sizeFilter" class="w-full bg-[#0B0F17] border border-gray-700 text-white rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400">
+                    <option value="all">Semua Ukuran</option>
+                    <option value="40">40 EU</option>
+                    <option value="41">41 EU</option>
+                    <option value="42">42 EU</option>
+                    <option value="43">43 EU</option>
+                    <option value="44">44 EU</option>
+                </select>
+            </div>
+
+            <!-- Price Sort -->
+            <div>
+                <label class="block text-xs font-semibold text-gray-400 mb-1">Urutkan Harga</label>
+                <select id="priceSort" class="w-full bg-[#0B0F17] border border-gray-700 text-white rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400">
+                    <option value="default">Default</option>
+                    <option value="low">Harga: Rendah ke Tinggi</option>
+                    <option value="high">Harga: Tinggi ke Rendah</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Shoe Cards Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic JS Injected Cards -->
+        </div>
+    </section>
+
+    <!-- Comprehensive Specification & Stock Table Section -->
+    <section id="spec-table" class="py-16 bg-[#151C28]/50 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Informasi Transparan</span>
+                <h2 class="text-3xl font-black text-white tracking-tight mt-1">Tabel Ukuran, Harga, Stok & Spesifikasi</h2>
+                <p class="text-gray-400 text-sm mt-1">Rincian lengkap dari seluruh unit sepatu baru branded yang siap kirim hari ini.</p>
+            </div>
+
+            <!-- Responsive Table Wrapper -->
+            <div class="overflow-x-auto rounded-2xl border border-gray-800 shadow-xl bg-[#0B0F17]">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-[#151C28] text-gray-300 font-bold uppercase text-xs border-b border-gray-800">
+                        <tr>
+                            <th scope="col" class="py-4 px-4">Model Sepatu</th>
+                            <th scope="col" class="py-4 px-4">Brand</th>
+                            <th scope="col" class="py-4 px-4">Ukuran Available</th>
+                            <th scope="col" class="py-4 px-4">Harga Cash (Tunai)</th>
+                            <th scope="col" class="py-4 px-4">Angsuran (12x)</th>
+                            <th scope="col" class="py-4 px-4 text-center">Jumlah Stok</th>
+                            <th scope="col" class="py-4 px-4">Spesifikasi Utama</th>
+                            <th scope="col" class="py-4 px-4 text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="specTableBody" class="divide-y divide-gray-800 text-gray-300">
+                        <!-- JS Injected Table Rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installment Calculator Section -->
+    <section id="calculator" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#151C28] to-[#1E293B] rounded-3xl p-6 md:p-10 border border-gray-800 shadow-2xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Simulasi Cicilan Instan</span>
+                    <h2 class="text-3xl font-black text-white">Kalkulator Angsuran E-Wallet & Bank</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Hitung estimasi angsuran bulanan Anda tanpa biaya tersembunyi. Layanan cicilan dapat digunakan melalui <strong>GoPay Later, DANA PayLater, OVO PayLater, Kredivo, dan Kartu Kredit Bank (BCA, BRI, Mandiri, BSI, BNI)</strong>.
+                    </p>
+                    
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-4 pt-2">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Sepatu Impian</label>
+                            <select id="calcShoeSelect" class="w-full bg-[#0B0F17] border border-gray-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyan-400">
+                                <!-- Options populated by JS -->
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Tenor Angsuran</label>
+                            <div class="grid grid-cols-3 gap-3" id="tenorGroup">
+                                <button type="button" onclick="setTenor(3)" id="tenor3" class="tenor-btn border border-cyan-500 bg-cyan-500/20 text-cyan-400 font-bold py-2.5 rounded-xl text-xs transition-all">3 Bulan</button>
+                                <button type="button" onclick="setTenor(6)" id="tenor6" class="tenor-btn border border-gray-700 text-gray-400 font-bold py-2.5 rounded-xl text-xs transition-all">6 Bulan</button>
+                                <button type="button" onclick="setTenor(12)" id="tenor12" class="tenor-btn border border-gray-700 text-gray-400 font-bold py-2.5 rounded-xl text-xs transition-all">12 Bulan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculation Result Box -->
+                <div class="lg:col-span-6">
+                    <div class="bg-[#0B0F17] rounded-2xl p-6 border border-gray-800 text-center space-y-4 relative">
+                        <div class="text-xs font-semibold text-gray-400">Estimasi Cicilan Bulanan</div>
+                        <div id="calcMonthlyPrice" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+                            Rp 0
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            *Sudah termasuk bebas biaya admin starter & sertifikat keaslian BNIB.
+                        </div>
+                        
+                        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-left text-xs gap-2">
+                            <div>
+                                <span class="text-gray-400 block">Total Harga Sepatu:</span>
+                                <span id="calcTotalPrice" class="font-bold text-white text-sm">Rp 0</span>
+                            </div>
+                            <button id="calcOrderBtn" onclick="orderFromCalc()" class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                Ajukan Cicilan Ini
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment-methods" class="py-16 bg-[#0B0F17] border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Fleksibilitas Pembayaran</span>
+                <h2 class="text-3xl font-black text-white mt-1">Metode Pembayaran Resmi</h2>
+                <p class="text-gray-400 text-sm mt-2">Dukungan pembayaran lengkap untuk kenyamanan transaksi online & offline Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Cash Payment -->
+                <div class="bg-[#151C28] p-6 rounded-2xl border border-gray-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Cash & Tunai</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Bayar langsung secara tunai saat pengambilan di Store (COD Store) atau melalui metode Cash on Delivery yang didukung logistik kepercayaan kami.
+                    </p>
+                    <span class="inline-block px-3 py-1 bg-cyan-950 text-cyan-400 text-[11px] font-semibold rounded-md border border-cyan-800">100% Aman & Tanpa Potongan</span>
+                </div>
+
+                <!-- E-Wallet Payment -->
+                <div class="bg-[#151C28] p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">E-Wallet (Cash & Cicilan)</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Terima saldo langsung maupun fitur PayLater dari dompet digital favorit Indonesia:
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-gray-300">
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">DANA</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">OVO</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">GoPay</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">ShopeePay</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">LinkAja</span>
+                    </div>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="bg-[#151C28] p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Transfer Bank Virtual / Manual</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Konfirmasi instan 24 jam dengan opsi Transfer Bank & Cicilan Kartu Kredit dari bank-bank ternama:
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-gray-300">
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">Bank BCA</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">Bank BRI</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">Bank BSI</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">Mandiri</span>
+                        <span class="px-2.5 py-1 bg-gray-800 rounded-md">Bank BNI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#080B11] border-t border-gray-800/80 pt-12 pb-8 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-black font-extrabold text-sm">
+                            KV
+                        </div>
+                        <span class="text-xl font-black text-white tracking-wider">KICKSVAULT</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        Destinasi utama sneakerhead Indonesia mencari koleksi sepatu branded original terlengkap dengan garansi keaslian uang kembali 100%.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-cyan-400">Beranda</a></li>
+                        <li><a href="#catalog" class="hover:text-cyan-400">Katalog Sepatu</a></li>
+                        <li><a href="#spec-table" class="hover:text-cyan-400">Tabel Spesifikasi</a></li>
+                        <li><a href="#calculator" class="hover:text-cyan-400">Simulasi Angsuran</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Kontak Store</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><i class="fa-solid fa-location-dot mr-2 text-cyan-400"></i> Jakarta & Bandara Sneaker Vault</li>
+                        <li><i class="fa-brands fa-whatsapp mr-2 text-emerald-400"></i> WhatsApp: 0812-3456-7890</li>
+                        <li><i class="fa-solid fa-envelope mr-2 text-indigo-400"></i> sales@kicksvault.id</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Jam Operasional CS</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Senin - Minggu: 09:00 - 22:00 WIB<br>
+                        Pemesanan online via WhatsApp tetap dapat diakses 24 Jam.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-gray-900 text-center text-xs text-gray-500">
+                &copy; 2026 KicksVault Store. All rights reserved. Built with modern web standards.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Popup Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-[#151C28] border border-gray-800 rounded-3xl max-w-2xl w-full p-6 relative shadow-2xl text-left my-8">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-800/80 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Modal Image -->
+                <div>
+                    <img id="modalImg" src="" alt="Shoe Image" class="w-full h-64 object-cover rounded-2xl border border-gray-700">
+                    <div id="modalBadges" class="mt-3 flex gap-2"></div>
+                </div>
+
+                <!-- Modal Info -->
+                <div class="space-y-3">
+                    <span id="modalBrand" class="text-xs font-extrabold text-cyan-400 uppercase tracking-widest">BRAND</span>
+                    <h3 id="modalTitle" class="text-xl font-black text-white">Shoe Title</h3>
+                    
+                    <div class="border-y border-gray-800 py-2 my-2">
+                        <div class="text-xs text-gray-400">Harga Cash (Tunai):</div>
+                        <div id="modalPrice" class="text-2xl font-black text-emerald-400">Rp 0</div>
+                        <div id="modalInstallment" class="text-xs text-cyan-300 font-semibold mt-0.5">Cicilan dari Rp 0 / bln</div>
+                    </div>
+
+                    <!-- Size Selector in Modal -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Ukuran Tersedia (EU):</label>
+                        <div id="modalSizes" class="flex flex-wrap gap-2"></div>
+                    </div>
+
+                    <!-- Stock Info -->
+                    <div class="text-xs text-gray-400">
+                        Status Stok Real-Time: <span id="modalStock" class="font-bold text-white">0 Pasang</span>
+                    </div>
+
+                    <!-- Payment Options Radio in Modal -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">Pilih Metode Pembayaran:</label>
+                        <select id="modalPaymentMethod" class="w-full bg-[#0B0F17] border border-gray-700 text-white rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-cyan-400">
+                            <option value="Cash / Tunai">Cash / Tunai (COD / Transfer Langsung)</option>
+                            <option value="Angsuran E-Wallet (DANA/OVO/GoPay)">Angsuran E-Wallet (DANA, OVO, GoPay, ShopeePay)</option>
+                            <option value="Transfer Bank (BRI/BCA/BSI/Mandiri)">Transfer Bank (BRI, BCA, BSI, Mandiri, BNI)</option>
+                        </select>
+                    </div>
+
+                    <!-- WhatsApp Buy Button -->
+                    <button id="modalWaBtn" onclick="submitWaOrderFromModal()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-emerald-500/20 mt-4">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Detailed Specifications in Modal -->
+            <div class="mt-6 pt-4 border-t border-gray-800">
+                <h4 class="text-sm font-bold text-white mb-2">Spesifikasi Lengkap Produk:</h4>
+                <div id="modalSpecs" class="text-xs text-gray-400 space-y-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Data & Interactivity -->
+    <script>
+        // Database Produk Sepatu Branded Baru (100% Original BNIB)
+        const products = [
+            {
+                id: 1,
+                name: "Air Jordan 1 Retro High OG 'Chicago'",
+                brand: "Jordan",
+                price: 3499000,
+                sizes: [40, 41, 42, 43, 44],
+                stock: 5,
+                image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80",
+                spec: "Premium Full-Grain Leather, Air-Sole Unit Cushioning, High-Cut Ankle Support",
+                badge: "Terbatas"
+            },
+            {
+                id: 2,
+                name: "Nike Dunk Low 'Panda' Black White",
+                brand: "Nike",
+                price: 1899000,
+                sizes: [40, 41, 42, 43],
+                stock: 12,
+                image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+                spec: "Smooth Leather Upper, Foam Midsole, Rubber Traction Outsole, Low-Cut Collar",
+                badge: "Tersedia"
+            },
+            {
+                id: 3,
+                name: "Adidas Yeezy Boost 350 V2 'Onyx'",
+                brand: "Adidas",
+                price: 4200000,
+                sizes: [41, 42, 43, 44],
+                stock: 3,
+                image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
+                spec: "Re-engineered Primeknit Upper, Full-length Boost Cushioning, TPU Sidewall",
+                badge: "Terbatas"
+            },
+            {
+                id: 4,
+                name: "New Balance 9060 'Castlerock'",
+                brand: "New Balance",
+                price: 2799000,
+                sizes: [40, 41, 42, 43],
+                stock: 8,
+                image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80",
+                spec: "Mesh & Pigskin Suede Upper, ABZORB & SBS Cushioning, Sculpted Pod Midsole",
+                badge: "Tersedia"
+            },
+            {
+                id: 5,
+                name: "Puma RS-X Triple Black Special",
+                brand: "Puma",
+                price: 1599000,
+                sizes: [40, 41, 42, 44],
+                stock: 10,
+                image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=600&q=80",
+                spec: "Textile Upper with Leather Overlays, Running System (RS) Tech, Lightweight PU",
+                badge: "Tersedia"
+            },
+            {
+                id: 6,
+                name: "Vans Old Skool Pro Classic Black/White",
+                brand: "Vans",
+                price: 1199000,
+                sizes: [40, 41, 42, 43],
+                stock: 15,
+                image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80",
+                spec: "Suede & Canvas Upper, PopCush Cushioning, DURACAP Rubber Underlays, Waffle Sole",
+                badge: "Tersedia"
+            }
+        ];
+
+        // Format Currency Helper
+        function formatRupiah(amount) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        // WhatsApp Phone Number
+        const WA_PHONE = "6281234567890"; // Format 081234567890 -> 6281234567890
+
+        // Active State for Modal
+        let activeProduct = null;
+        let selectedSizeModal = null;
+        let selectedTenor = 3;
+
+        // Render Cards in Catalog Grid
+        function renderCatalog(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            if(items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-shoe-prints text-4xl mb-3 block"></i>
+                        Sepatu yang Anda cari tidak ditemukan. Silakan ubah filter.
+                    </div>
+                `;
+                return;
+            }
+
+            items.forEach(product => {
+                const installmentEst = Math.round(product.price / 12);
+                const badgeColor = product.badge === 'Terbatas' ? 'bg-amber-500/20 text-amber-400 border-amber-500/30' : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
+                
+                const card = document.createElement('div');
+                card.className = "bg-[#151C28] rounded-3xl overflow-hidden border border-gray-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col group";
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-60">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold rounded-lg border backdrop-blur-md ${badgeColor}">
+                            Stok ${product.badge} (${product.stock})
+                        </span>
+                        <span class="absolute top-3 left-3 px-2.5 py-1 text-xs font-extrabold rounded-lg bg-black/60 text-white backdrop-blur-md">
+                            ${product.brand}
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">${product.name}</h3>
+                            <div class="text-xs text-gray-400 mt-1">Ukuran Ready: ${product.sizes.join(', ')} EU</div>
+                        </div>
+
+                        <div class="pt-2 border-t border-gray-800">
+                            <div class="text-xs text-gray-400">Harga Cash (Tunai)</div>
+                            <div class="text-xl font-black text-white">${formatRupiah(product.price)}</div>
+                            <div class="text-xs text-emerald-400 font-semibold mt-0.5">
+                                Est. Angsuran: <strong class="text-cyan-400">${formatRupiah(installmentEst)}</strong>/bln (12x)
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 pt-2">
+                            <button onclick="openProductModal(${product.id})" class="px-3 py-2.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold rounded-xl transition-all">
+                                Detail & Spesifikasi
+                            </button>
+                            <button onclick="quickWaOrder(${product.id})" class="px-3 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-black text-xs font-extrabold rounded-xl transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Beli WA
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Specification Table
+        function renderTable(items) {
+            const tbody = document.getElementById('specTableBody');
+            tbody.innerHTML = '';
+
+            items.forEach(product => {
+                const est12 = formatRupiah(Math.round(product.price / 12));
+                const est6 = formatRupiah(Math.round(product.price / 6));
+                const est3 = formatRupiah(Math.round(product.price / 3));
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-[#151C28]/80 transition-colors border-b border-gray-800/60";
+                tr.innerHTML = `
+                    <td class="py-4 px-4 font-bold text-white flex items-center gap-3">
+                        <img src="${product.image}" class="w-10 h-10 rounded-lg object-cover" alt="">
+                        <span>${product.name}</span>
+                    </td>
+                    <td class="py-4 px-4 text-cyan-400 font-semibold">${product.brand}</td>
+                    <td class="py-4 px-4"><span class="bg-gray-800 px-2 py-1 rounded text-xs">${product.sizes.join(', ')}</span></td>
+                    <td class="py-4 px-4 font-black text-emerald-400">${formatRupiah(product.price)}</td>
+                    <td class="py-4 px-4 text-xs">
+                        <div>12x: <span class="text-cyan-300 font-semibold">${est12}</span></div>
+                        <div class="text-gray-500">3x: ${est3} | 6x: ${est6}</div>
+                    </td>
+                    <td class="py-4 px-4 text-center">
+                        <span class="px-2.5 py-1 rounded-full text-xs font-bold ${product.stock <= 5 ? 'bg-amber-500/20 text-amber-400' : 'bg-emerald-500/20 text-emerald-400'}">
+                            ${product.stock} Pasang
+                        </span>
+                    </td>
+                    <td class="py-4 px-4 text-xs text-gray-400 max-w-xs">${product.spec}</td>
+                    <td class="py-4 px-4 text-center">
+                        <button onclick="openProductModal(${product.id})" class="px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold text-xs rounded-lg transition-all">
+                            Pesan
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Filter & Search Functionality
+        function filterProducts() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const brandVal = document.getElementById('brandFilter').value;
+            const sizeVal = document.getElementById('sizeFilter').value;
+            const sortVal = document.getElementById('priceSort').value;
+
+            let filtered = products.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchVal) || p.brand.toLowerCase().includes(searchVal);
+                const matchesBrand = brandVal === 'all' || p.brand === brandVal;
+                const matchesSize = sizeVal === 'all' || p.sizes.includes(parseInt(sizeVal));
+                return matchesSearch && matchesBrand && matchesSize;
+            });
+
+            if (sortVal === 'low') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sortVal === 'high') {
+                filtered.sort((a, b) => b.price - a.price);
+            }
+
+            renderCatalog(filtered);
+            renderTable(filtered);
+        }
+
+        // Open Detail Modal
+        function openProductModal(id) {
+            activeProduct = products.find(p => p.id === id);
+            if (!activeProduct) return;
+
+            document.getElementById('modalImg').src = activeProduct.image;
+            document.getElementById('modalBrand').innerText = activeProduct.brand;
+            document.getElementById('modalTitle').innerText = activeProduct.name;
+            document.getElementById('modalPrice').innerText = formatRupiah(activeProduct.price);
+            document.getElementById('modalInstallment').innerText = `Cicilan mulai ${formatRupiah(Math.round(activeProduct.price / 12))}/bln (12 Bulan)`;
+            document.getElementById('modalStock').innerText = `${activeProduct.stock} Pasang Available`;
+            document.getElementById('modalSpecs').innerText = activeProduct.spec;
+
+            // Render sizes buttons
+            const sizeContainer = document.getElementById('modalSizes');
+            sizeContainer.innerHTML = '';
+            selectedSizeModal = activeProduct.sizes[0];
+
+            activeProduct.sizes.forEach(size => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${size === selectedSizeModal ? 'bg-cyan-500 text-black border-cyan-500' : 'bg-gray-800 text-gray-300 border-gray-700'}`;
+                btn.innerText = `${size} EU`;
+                btn.onclick = () => {
+                    selectedSizeModal = size;
+                    Array.from(sizeContainer.children).forEach(c => {
+                        c.className = 'px-3 py-1.5 rounded-lg text-xs font-bold border transition-all bg-gray-800 text-gray-300 border-gray-700';
+                    });
+                    btn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold border transition-all bg-cyan-500 text-black border-cyan-500';
+                };
+                sizeContainer.appendChild(btn);
+            });
+
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        // Submit Order via WhatsApp from Modal
+        function submitWaOrderFromModal() {
+            if(!activeProduct) return;
+
+            const paymentMethod = document.getElementById('modalPaymentMethod').value;
+            const message = `Halo KicksVault Admin, saya ingin memesan sepatu berikut:\n\n` +
+                            `👟 *Model*: ${activeProduct.name}\n` +
+                            `🏷️ *Brand*: ${activeProduct.brand}\n` +
+                            `📏 *Ukuran*: ${selectedSizeModal} EU\n` +
+                            `💰 *Harga Cash*: ${formatRupiah(activeProduct.price)}\n` +
+                            `💳 *Metode Pembayaran*: ${paymentMethod}\n\n` +
+                            `Mohon informasi ketersediaan stok dan petunjuk transaksi selanjutnya. Terima kasih!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WA_PHONE}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Quick WhatsApp Order
+        function quickWaOrder(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const message = `Halo KicksVault Admin, saya tertarik untuk order:\n\n` +
+                            `👟 *Model*: ${product.name}\n` +
+                            `🏷️ *Brand*: ${product.brand}\n` +
+                            `💰 *Harga*: ${formatRupiah(product.price)}\n\n` +
+                            `Bisa bantu proses pesanan saya?`;
+
+            window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Calculator Logic
+        function populateCalcSelect() {
+            const select = document.getElementById('calcShoeSelect');
+            select.innerHTML = '';
+            products.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.id;
+                opt.innerText = `${p.name} - ${formatRupiah(p.price)}`;
+                select.appendChild(opt);
+            });
+            updateCalculator();
+        }
+
+        function setTenor(months) {
+            selectedTenor = months;
+            [3, 6, 12].forEach(m => {
+                const btn = document.getElementById(`tenor${m}`);
+                if(m === months) {
+                    btn.className = "tenor-btn border border-cyan-500 bg-cyan-500/20 text-cyan-400 font-bold py-2.5 rounded-xl text-xs transition-all";
+                } else {
+                    btn.className = "tenor-btn border border-gray-700 text-gray-400 font-bold py-2.5 rounded-xl text-xs transition-all";
+                }
+            });
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const shoeId = parseInt(document.getElementById('calcShoeSelect').value);
+            const product = products.find(p => p.id === shoeId) || products[0];
+
+            const monthly = Math.round(product.price / selectedTenor);
+            document.getElementById('calcMonthlyPrice').innerText = `${formatRupiah(monthly)} /bln`;
+            document.getElementById('calcTotalPrice').innerText = formatRupiah(product.price);
+        }
+
+        function orderFromCalc() {
+            const shoeId = parseInt(document.getElementById('calcShoeSelect').value);
+            const product = products.find(p => p.id === shoeId);
+            if(!product) return;
+
+            const monthly = Math.round(product.price / selectedTenor);
+            const message = `Halo KicksVault, saya ingin mengajukan *Simulasi Cicilan ${selectedTenor} Bulan* untuk:\n\n` +
+                            `👟 *Sepatu*: ${product.name}\n` +
+                            `💳 *Tenor*: ${selectedTenor} Bulan\n` +
+                            `💵 *Estimasi Cicilan*: ${formatRupiah(monthly)}/bulan\n` +
+                            `🏷️ *Total Harga*: ${formatRupiah(product.price)}\n\n` +
+                            `Mohon dibantu syarat dan verifikasi pengajuannya.`;
+
+            window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Event Listeners & Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog(products);
+            renderTable(products);
+            populateCalcSelect();
+
+            document.getElementById('searchInput').addEventListener('input', filterProducts);
+            document.getElementById('brandFilter').addEventListener('change', filterProducts);
+            document.getElementById('sizeFilter').addEventListener('change', filterProducts);
+            document.getElementById('priceSort').addEventListener('change', filterProducts);
+            document.getElementById('calcShoeSelect').addEventListener('change', updateCalculator);
+
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
